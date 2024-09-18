@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: Print Secret
         run: |
-          [ "${{ secrets.THEANSWER }}" -eq 42 ] || exit 1
+          [ "${{ secrets.THEANSWER }}" -eq 43 ] || exit 1
         
