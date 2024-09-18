@@ -1,6 +1,9 @@
 name: gitlab-ci
 
-on: [ push, pull_request, workflow_dispatch ]
+workflow_dispatch: # Allows manual triggering
+  pull_request:
+    types: [opened, synchronize] # Trigger on PR events
+  push:
 
 jobs:
   gitlab-ci:
@@ -8,5 +11,5 @@ jobs:
     steps:
       - name: Print Secret
         run: |
-          [ "${{ secrets.THEANSWER }}" -eq 43 ] || exit 1
+          [ "${{ secrets.THEANSWER }}" -eq 42 ] || exit 1
         
