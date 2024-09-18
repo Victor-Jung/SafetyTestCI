@@ -2,11 +2,11 @@ name: gitlab-ci
 
 on:
   workflow_dispatch: # Allows manual triggering
-    pull_request:
-      types: [opened, synchronize] # Trigger on PR events
-    push:
-      branches:
-        - main
+  pull_request:
+    types: [opened, synchronize] # Trigger on PR events
+  push:
+    branches:
+      - main
 
 jobs:
   gitlab-ci:
