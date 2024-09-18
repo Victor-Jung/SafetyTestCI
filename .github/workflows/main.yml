@@ -1,0 +1,12 @@
+name: gitlab-ci
+
+on: [ push, pull_request, workflow_dispatch ]
+
+jobs:
+  gitlab-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Secret
+        run: |
+          [ "${{ secrets.THEANSWER }}" -eq 43 ] || exit 1
+        
