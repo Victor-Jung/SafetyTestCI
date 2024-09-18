@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Secret
-        run: echo ${{ secrets.THEANSWER }}
+        run: [ ${{ secrets.THEANSWER }} -eq 42 ] || exit 1
         
